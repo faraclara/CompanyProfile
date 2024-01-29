@@ -58,7 +58,7 @@
         <div class="col-md-6">
         <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum quaerat unde in cum vel debitis, aliquid ratione accusantium quis deserunt. Eum, laudantium eos. Maxime dolor aliquid repellendus deleniti adipisci ratione ipsum. Quidem nesciunt iure voluptatem doloribus tempora quam, repellendus neque architecto quasi placeat? Hic iusto ut laboriosam sit, numquam cumque sint modi excepturi consequuntur optio tenetur dolores voluptatibus earum debitis, cupiditate dolorum obcaecati beatae. Libero error ex quaerat corrupti commodi rerum, enim at doloremque delectus esse quam similique magni. Dolorum eaque autem similique eum, voluptatem vel animi, exercitationem architecto doloremque temporibus, quia optio aliquid! Culpa esse quae quod eius perferendis!</P>
 
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ut ipsa consequuntur voluptates doloremque amet error iure in esse nihil culpa libero, accusantium modi. Molestiae eius enim maxime qui optio? Explicabo atque molestias nulla tenetur obcaecati, distinctio, assumenda provident incidunt cum quam optio commodi nostrum culpa eius aut, at eaque.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ut ipsa consequuntur voluptates doloremque amet error iure in esse nihil culpa libero, accusantium modi. Molestiae eius enim maxime qui optio? Explicabo atque molestias nulla tenetur obcaecati, distinctio, assumenda provident incidunt cum quam optio commodi nostrum culpa eius aut, at eaque. </p>
         </div>
     </div>
 
@@ -103,6 +103,115 @@
     <div class="text-center mt-3">
         <a href="" class= "btn btn-success px-5"class="">Selengkapnya<i class="fas fa-arrow-right"></i></a>
 
+</div>
+</div>
+
+
+<div class="bg-light my-5">
+    <div class="container py-5">
+        <div class="text-dark text-center">
+        <h5>Pelajari Tentang Kami</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto animi neque unde praesentium quasi tempore delectus voluptate eos. Recusandae ratione possimus corrupti velit minus maiores ullam temporibus ipsum voluptate?
+        </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container my-2">
+    <div class="text-center">
+    <h4 class="">Blog</h4>
+    <p>Apa Saja Kabar Hari Ini? kami beri tahu anda</p>
+</div>
+
+    <div class="row">
+
+
+
+        <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="wrapper-card-blog">
+                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+            </div>
+            <div class="p-3">
+            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
+                <a href="">Selengkapnya &RightArrow;</a>
+            </p>
+            </div>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="wrapper-card-blog">
+                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+            </div>
+            <div class="p-3">
+            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
+                <a href="">Selengkapnya &RightArrow;</a>
+            </p>
+            </div>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="wrapper-card-blog">
+                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+            </div>
+            <div class="p-3">
+            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
+                <a href="">Selengkapnya &RightArrow;</a>
+            </p>
+            </div>
+    </div>
+    </div>
+
+    <div class="col-md-3">
+            <div class="card shadow-sm">
+                <div class="wrapper-card-blog">
+                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+            </div>
+            <div class="p-3">
+            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
+                <a href="">Selengkapnya &RightArrow;</a>
+            </p>
+            </div>
+    </div>
+    </div>
+
+
+    <div class="text-center mt-3">
+        <a href="" class= "btn btn-success px-5"class="">Selengkapnya<i class="fas fa-arrow-right"></i></a>
+
+</div>
+ 
+    </div>
+</div>
+
+
+<div class="bg-success my-5">
+    <div class="container py-5">
+        <div class="text-white">
+        <h5>Pelajari Tentang Kami</h5>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum architecto animi neque unde praesentium quasi tempore delectus voluptate eos. Recusandae ratione possimus corrupti velit minus maiores ullam temporibus ipsum voluptate?
+        </p>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container my-2 mb-5">
+    <div class="text-center">
+    <h4 class="">Hubungi Kami</h4>
+    <p>Anda dapat bertanya langsung ke kami </p>
+    <a href=""class="btn btn-success px-5" targets="blank"> <i class="fas fa-phone"></i>Hubungi Kami di WhatsApp</a>
 </div>
 </div>
 
