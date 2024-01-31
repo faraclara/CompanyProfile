@@ -96,8 +96,6 @@
         </div>
 
         @endfor
-
-
     </div>
 
     <div class="text-center mt-3">
@@ -127,9 +125,9 @@
 
     <div class="row">
 
+    @for($i = 0; $i < 4; $i++)
 
-
-        <div class="col-md-3">
+        <div class="col-md-3 my-3">
             <div class="card shadow-sm">
                 <div class="wrapper-card-blog">
                 <img src="/img/thumb.jpg" class="img-card-blog" alt="">
@@ -143,48 +141,7 @@
     </div>
     </div>
 
-    <div class="col-md-3">
-            <div class="card shadow-sm">
-                <div class="wrapper-card-blog">
-                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
-            </div>
-            <div class="p-3">
-            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
-                <a href="">Selengkapnya &RightArrow;</a>
-            </p>
-            </div>
-    </div>
-    </div>
-
-    <div class="col-md-3">
-            <div class="card shadow-sm">
-                <div class="wrapper-card-blog">
-                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
-            </div>
-            <div class="p-3">
-            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
-                <a href="">Selengkapnya &RightArrow;</a>
-            </p>
-            </div>
-    </div>
-    </div>
-
-    <div class="col-md-3">
-            <div class="card shadow-sm">
-                <div class="wrapper-card-blog">
-                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
-            </div>
-            <div class="p-3">
-            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
-                <a href="">Selengkapnya &RightArrow;</a>
-            </p>
-            </div>
-    </div>
-    </div>
-
+    @endfor
 
     <div class="text-center mt-3">
         <a href="" class= "btn btn-success px-5"class="">Selengkapnya<i class="fas fa-arrow-right"></i></a>
