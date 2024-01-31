@@ -50,3 +50,12 @@ Route::get('/contact', function() {
     return view('home.layouts.wrapper', $data);
 });
 
+
+Route::get('/login', function() {
+    $data = [
+        'content' => 'home/auth/login'
+    ];
+    return view('home.layouts.wrapper', $data);
+});
+
+

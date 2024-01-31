@@ -37,7 +37,7 @@
           </li>
         </ul>
         <form class="d-flex">
-        <a href="" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="/login" class="btn btn-primary"><i class="fas fa-sign-in-alt"></i> Login</a>
         </form>
       </div>
     </div>
