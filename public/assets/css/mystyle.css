@@ -4,7 +4,31 @@
         overflow: hidden;
     }
 
-    .mg-card-blog{
+    .img-card-blog{
         width: 100%;
 
     }
+
+    .wrapper-hero{
+        width: 100%;
+        max-height: 300px;
+        overflow: hidden;
+
+    }
+
+    .img-hero{
+        position: relative;
+    }
+
+    .text-hero{
+        position: absolute;
+        top: 200px;
+        width: 100%;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+
+    }
+
+
