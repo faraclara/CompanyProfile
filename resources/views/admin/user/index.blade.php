@@ -10,17 +10,25 @@
                         <td>Email</td>
                         <td>Action</td>
                     </tr>
-                    
+                    @foreach ($user as $item)
                     <tr>
-                        <td>1</td>
-                        <td>Answar Kasim</td>
-                        <td>email@email</td>
+                        <td>{{$loop->iteration}}</td>
+                        <td>{{$item ->name}}</td>
+                        <td>{{$item ->email}}</td>
                         <td>
-                            <a href="" class="btn btn-success">Edit</a>
-                            <a href="" class="btn btn-danger">Hapus</a>
+                            <div class="d-flex">
+                            <a href="/admin/user/{{$item->id}}/edit" class="btn btn-success mx-2">Edit</a>
+
+                            <form action="/admin/user/{{ $item->id }}" method="POST">
+                                @method('delete')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                @csrf
+                            </form>
+                            </div>
 
                         </td>
                     </tr>
+                    @endforeach
 
                 </table>
             </div>
