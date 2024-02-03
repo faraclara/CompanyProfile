@@ -19,7 +19,7 @@
 
 
                <li class="nav-item">
-            <a href="/admin/dashboard" class="nav-link">
+            <a href="/admin/dashboard" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dasboard
@@ -84,7 +84,7 @@
 
 
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/admin/banner" class="nav-link {{ Request::is('admin/banner*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-image"></i>
               <p>
                 Banner
@@ -94,7 +94,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin/user" class="nav-link">
+            <a href="/admin/user" class="nav-link {{ Request::is('admin/user*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-users"></i>
               <p>
                 User

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
+use App\Http\Controllers\AdminBannerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,6 +71,7 @@ Route::prefix('/admin')->group(function () {
         return view('admin.layouts.wrapper', $data);
     });
 
+    Route::resource('/banner', AdminBannerController::class);
     Route::resource('/user', AdminUserController::class);
 });
 
