@@ -2,7 +2,8 @@
     <div class="col-md-6">
         <div class="card">
             <div class="card-body">
-                @if ($user)
+
+                @if (isset ($user))
                 <form action="/admin/user/{{ $user->id}}" method="POST">
                     @method('PUT')
                 @else

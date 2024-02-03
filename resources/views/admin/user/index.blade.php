@@ -17,11 +17,11 @@
                         <td>{{$item ->email}}</td>
                         <td>
                             <div class="d-flex">
-                            <a href="/admin/user/{{$item->id}}/edit" class="btn btn-success mx-2">Edit</a>
+                            <a href="/admin/user/{{$item->id}}/edit" class="btn btn-success mx-2"><i class="fas fa-edit"></i>Edit</a>
 
                             <form action="/admin/user/{{ $item->id }}" method="POST">
                                 @method('delete')
-                            <button type="submit" class="btn btn-danger">Hapus</button>
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i>Hapus</button>
                                 @csrf
                             </form>
                             </div>
