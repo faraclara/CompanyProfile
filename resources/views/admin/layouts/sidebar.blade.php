@@ -73,7 +73,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/admin/service" class="nav-link">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Services
