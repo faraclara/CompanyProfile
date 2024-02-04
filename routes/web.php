@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminUserController;
 use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminServiceController;
+use App\Http\Controllers\AdminAboutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -71,6 +72,9 @@ Route::prefix('/admin')->group(function () {
         ];
         return view('admin.layouts.wrapper', $data);
     });
+
+    Route::get('/about', [AdminAboutController::class, 'index']);
+    Route::put('/about/update', [AdminAboutController::class, 'update']);
 
     Route::resource('/service', AdminServiceController::class);
     Route::resource('/banner', AdminBannerController::class);
