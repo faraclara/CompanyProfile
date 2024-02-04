@@ -51,13 +51,27 @@ class AdminBannercontroller extends Controller
         // dd($request->all());
         //validasi data
         $data = $request->validate([
-            'name'  =>  'required',
-            'email' =>  'required|unique:banners',
-            'password'  =>  'required',
-            're_password'   =>  'required|same:password',
-        ]); 
+            'headline'  =>  'required',
+            'desc' =>  'required',
+            // 'urutan'  =>  'required',
+            'gambar'  =>  'required',
+        ]);
+        
+        
+        $data['urutan'] = 0;
+        //uploud gambar
+        if($request->hasFile('gambar')){
+            $gambar = $request->file('gambar');
+            $file_name = time() . "_" . $gambar->getClientOriginalName();
 
-        $data['password']   = Hash::make($data['password']);
+
+            $storage = 'uplouds/banners/';
+            $gambar->move($storage, $file_name);
+            $data['gambar'] = $storage.$file_name;
+        }else{
+            $data['gambar'] = null;
+        }
+
 
         // masukkin data ke db banner
         banner::create($data);
@@ -103,20 +117,36 @@ class AdminBannercontroller extends Controller
     public function update(Request $request, $id)
     {
         //
-        $banner = banner::find($id);
+        $banner = Banner::find($id);
         $data = $request->validate([
-            'name'  =>  'required',
-            'email' =>  'required|unique:banners,email,' . $banner->id,
-            // 'password'  =>  'required',
-            're_password'   =>  'same:password',
-        ]); 
+            'headline'  =>  'required',
+            'desc' =>  'required',
+            // 'urutan'  =>  'required',
+            // 'gambar'  =>  'required',
+        ]);
+        
+        
+        $data['urutan'] = 0;
+        //uploud gambar
+        if($request->hasFile('gambar')){
+
+            if($banner->gambar != null){
+                unlink($banner->gambar);
+            }
+
+            $gambar = $request->file('gambar');
+            $file_name = time() . "_" . $gambar->getClientOriginalName();
 
 
-        if($request->password){
-            $data['password']   = Hash::make($data['password']);
+            $storage = 'uplouds/banners/';
+            $gambar->move($storage, $file_name);
+            $data['gambar'] = $storage.$file_name;
         }else{
-            $data['password']   = $banner->password;
+            $data['gambar'] = $banner->gambar;
         }
+
+
+        // masukkin data ke db banner
         $banner->update($data);
         Alert::success('Sukses', 'Data Berhasil diupdate');
         return redirect('/admin/banner');
@@ -132,6 +162,10 @@ class AdminBannercontroller extends Controller
     {
         //
         $banner = banner::find($id);
+
+        if($banner->gambar != null){
+            unlink($banner->gambar);
+        }
         $banner->delete();
         Alert::success('Sukses', 'Data Berhasil dihapus');
         return redirect('admin/banner');
