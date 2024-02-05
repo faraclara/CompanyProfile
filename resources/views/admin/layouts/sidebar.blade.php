@@ -38,7 +38,7 @@
             </a>
           </li>
                
-          <li class="nav-item">
+          <li class="nav-item {{ Request::is('admin/posts*') ? 'menu-is-opening menu-opn' : '' }}">
             <a href="#" class="nav-link">
               <i class="nav-icon fas fa-file"></i>
               <p>
@@ -54,7 +54,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/admin/posts/kategori" class="nav-link">
+                <a href="/admin/posts/kategori" class="nav-link Request::is('admin/posts/kategori*') ? 'active' : ''">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Kategori</p>
                 </a>
@@ -63,7 +63,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin/about" class="nav-link">
+            <a href="/admin/about" class="nav-link {{ Request::is('admin/about*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-calendar"></i>
               <p>
                 About
@@ -73,7 +73,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin/service" class="nav-link">
+            <a href="/admin/service" class="nav-link {{ Request::is('admin/service*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-list"></i>
               <p>
                 Services
