@@ -6,6 +6,9 @@ use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminAboutController;
 
+use App\Http\Controllers\AdminBlogController;
+use App\Http\Controllers\AdminKategoriController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,6 +78,9 @@ Route::prefix('/admin')->group(function () {
 
     Route::get('/about', [AdminAboutController::class, 'index']);
     Route::put('/about/update', [AdminAboutController::class, 'update']);
+
+    Route::resource('/posts/blog', AdminBlogController::class);
+    Route::resource('/posts/kategori', AdminKategoriController::class);
 
     Route::resource('/service', AdminServiceController::class);
     Route::resource('/banner', AdminBannerController::class);
