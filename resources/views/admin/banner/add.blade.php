@@ -12,7 +12,7 @@
                     @csrf
                 <div class="form-group">
                     <label for="">Headline</label>
-                    <input type="text" name="headline" class="form-control @error('headline') is-invalid @enderror" placeholder="username" value="{{ isset($banner) ? $banner->name : old('headline')}}">
+                    <input type="text" name="headline" class="form-control @error('headline') is-invalid @enderror" placeholder="Headline" value="{{ isset($banner) ? $banner->name : old('headline')}}">
                     @error('headline')
                         <div class="invalid-feedback">
                             {{$message}}
