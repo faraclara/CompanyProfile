@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminBannerController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\AdminAboutController;
 
+use App\Http\Controllers\AdminPesanController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminKategoriController;
 
@@ -82,6 +83,7 @@ Route::prefix('/admin')->group(function () {
     Route::resource('/posts/blog', AdminBlogController::class);
     Route::resource('/posts/kategori', AdminKategoriController::class);
 
+    Route::resource('/pesan', AdminPesanController::class);
     Route::resource('/service', AdminServiceController::class);
     Route::resource('/banner', AdminBannerController::class);
     Route::resource('/user', AdminUserController::class);

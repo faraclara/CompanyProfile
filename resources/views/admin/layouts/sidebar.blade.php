@@ -29,10 +29,10 @@
           </li>
 
           <li class="nav-item">
-            <a href="../widgets.html" class="nav-link">
+            <a href="/admin/pesan" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-                Saran
+                Pesan
                 <!-- <span class="right badge badge-danger">New</span> -->
               </p>
             </a>
