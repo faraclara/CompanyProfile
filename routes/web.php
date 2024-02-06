@@ -9,6 +9,7 @@ use App\Http\Controllers\AdminAboutController;
 use App\Http\Controllers\AdminPesanController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminKategoriController;
+use App\Http\Controllers\AdminDashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -70,12 +71,7 @@ Route::get('/login', function() {
 // ===========ADMIN=============
 
 Route::prefix('/admin')->group(function () {
-    Route::get('/dashboard', function(){
-        $data =[
-            'content'   => 'admin/dashboard/index'
-        ];
-        return view('admin.layouts.wrapper', $data);
-    });
+    Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 
     Route::get('/about', [AdminAboutController::class, 'index']);
     Route::put('/about/update', [AdminAboutController::class, 'update']);
