@@ -9,10 +9,15 @@
 
                 <div class="text-center"><strong><h4>Login</h4></strong></div>
                 <p class="text-center">Masukkan akses akun anda</p>
-                    <form action="">
+
+                @if(session()->has('loginError'))
+                <div class="alert alert-danger">{{ session('loginError')}}</div>
+                @endif
+                    <form action="/login/do" method="POST">
+                        @csrf
                         <div class="form-group">
                             <label for=""><b>Username</b></label>
-                            <input type="text" name="name" class="form-control" placeholder="username">
+                            <input type="text" name="email" class="form-control" placeholder="username">
                         </div>
 
                         <div class="form-group mt-3">

@@ -10,6 +10,7 @@ use App\Http\Controllers\AdminPesanController;
 use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\AdminAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,12 +61,8 @@ Route::get('/contact', function() {
 });
 
 
-Route::get('/login', function() {
-    $data = [
-        'content' => 'home/auth/login'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
+Route::get('/login', [AdminAuthController::class, 'index']);
+Route::post('/login/do', [AdminAuthController::class, 'doLogin']);
 
 
 // ===========ADMIN=============
