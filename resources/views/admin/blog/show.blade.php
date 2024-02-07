@@ -9,7 +9,7 @@
                 <img src="/{{ $blog->cover}}" width="100%" alt="">
 
                 <div class="py-3"></div>
-                <p>{{ $blog->body}}</p>
+                <p>{!! $blog->body !!}</p>
 
             </div>
         </div>
