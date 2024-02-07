@@ -61,13 +61,16 @@ Route::get('/contact', function() {
 });
 
 
-Route::get('/login', [AdminAuthController::class, 'index']);
+Route::get('/login', [AdminAuthController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login/do', [AdminAuthController::class, 'doLogin']);
 
 
 // ===========ADMIN=============
 
-Route::prefix('/admin')->group(function () {
+Route::prefix('/admin')->middleware('auth')->group(function () {
+
+    Route::get('/logout', [AdminAuthController::class, 'logout']);
+
     Route::get('/dashboard', [AdminDashboardController::class, 'index']);
 
     Route::get('/about', [AdminAboutController::class, 'index']);

@@ -29,7 +29,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="/admin/pesan" class="nav-link {{ Request::is('admin/dashboard*') ? 'active' : ''}}">
+            <a href="/admin/pesan" class="nav-link {{ Request::is('admin/pesan*') ? 'active' : ''}}">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
                 Pesan

@@ -33,4 +33,14 @@ class AdminAuthController extends Controller
         return back()->with('loginError', 'Gagal Login, Email atau password tidak ditemukan');
 
     }
+
+    function logout()
+    {
+        Auth::logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
+
+        return redirect('/');
+    }
 }
