@@ -7,23 +7,24 @@
     <div class="row">
 
 
-        @for($i = 0; $i < 12; $i++)
+  
+        @foreach($blog as $item)
 
         <div class="col-md-3">
             <div class="card shadow-sm">
                 <div class="wrapper-card-blog">
-                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+                <img src="/{{ $item->cover }}" class="img-card-blog" alt="">
             </div>
             <div class="p-3">
-            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
-                <a href="">Selengkapnya &RightArrow;</a>
-            </p>
+            <a href="/blog/show/{{ $item->id}}" class="text-decoration-none"><h5>{{ $item->title}}</h5></a>
+            <p>{!! Illuminate\Support\Str::limit($item->body, 100) !!}</p>
+                <!-- <a href="/blog/show/{{ $item->id}}">Selengkapnya &RightArrow;</a> -->
             </div>
     </div>
     </div>
 
-    @endfor
+
+    @endforeach
 
  
     </div>

@@ -12,6 +12,7 @@ use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,15 +29,10 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about', [HomeController::class, 'about']);
 Route::get('/services', [HomeController::class, 'service']);
 
+Route::get('/blog', [HomeBlogController::class, 'index']);
+Route::get('/blog/show/{id}', [HomeBlogController::class, 'show']);
 
 
-
-Route::get('/blog', function() {
-    $data = [
-        'content' => 'home/blog/index'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
 
 Route::get('/contact', function() {
     $data = [

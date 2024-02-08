@@ -29,7 +29,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link {{ Request::is('blog')? 'menu-active' : ''}}" href="/blog">Blog</a>
+            <a class="nav-link {{ Request::is('blog*')? 'menu-active' : ''}}" href="/blog">Blog</a>
           </li>
 
           <li class="nav-item">

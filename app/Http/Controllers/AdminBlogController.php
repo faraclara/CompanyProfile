@@ -54,7 +54,7 @@ class AdminBlogController extends Controller
 
         $data = $request->validate([
             'title'  =>  'required',
-            'body' =>  'required',
+            'body' =>  'required|min:100',
             'kategori_id' =>  'required',
             'cover'  =>  'required',
         ]);
