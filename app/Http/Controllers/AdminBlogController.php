@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\Kategori;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminBlogController extends Controller
@@ -18,7 +19,7 @@ class AdminBlogController extends Controller
         //
         $data =[
             'title'     => 'Manajemen Blog',
-            'blog'      => Blog::get(),
+            'blog'      => Blog::with('kategori')->get(),
             'content'   => 'admin/blog/index'
         ];
         return view('admin.layouts.wrapper', $data);
@@ -34,6 +35,7 @@ class AdminBlogController extends Controller
         //
         $data =[
             'title'     => 'Tambah Blog',
+            'kategori'  => Kategori::get(),
             'content'   => 'admin/blog/add'
         ];
         return view('admin.layouts.wrapper', $data);
@@ -53,6 +55,7 @@ class AdminBlogController extends Controller
         $data = $request->validate([
             'title'  =>  'required',
             'body' =>  'required',
+            'kategori_id' =>  'required',
             'cover'  =>  'required',
         ]);
         
@@ -125,6 +128,7 @@ class AdminBlogController extends Controller
         $data = $request->validate([
             'title'  =>  'required',
             'body' =>  'required',
+            'kategori_id' =>  'required',
             'cover'  =>  'required',
         ]);
         

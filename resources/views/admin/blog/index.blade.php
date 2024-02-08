@@ -8,6 +8,7 @@
                         <td>No</td>
                         <td>Gambar</td>
                         <td>Title</td>
+                        <td>Kategori</td>
                         <td>Action</td>
                     </tr>
                     @foreach ($blog as $item)
@@ -17,6 +18,7 @@
                         <td>
                             <a href="/admin/posts/blog/{{ $item->id}}"><b>{{ $item->title }}</b></a>
                         </td>
+                        <td>{{$item->kategori->name}}</td>
                         
                         <td>
                             <div class="d-flex">

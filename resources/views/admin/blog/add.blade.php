@@ -23,6 +23,23 @@
                     @enderror
                 </div>
 
+                <div class="form-group">
+                    <label for="">Kategori</label>
+                   <select name="kategori_id" class="form-control" id="">
+                    <option value="">--Kategori--</option>
+                    @foreach ($kategori as $item)
+                    <option value="{{ $item->id}}">{{$item->name}}</option>
+                    @endforeach
+                   </select>
+                    @error('kategori_id')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
+                </div>
+
+
+
                 
                 <div class="form-group">
                     <label for="">cover</label>
