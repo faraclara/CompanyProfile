@@ -19,4 +19,23 @@ class HomeController extends Controller
     ];
     return view('home.layouts.wrapper', $data);
     }
+
+
+function about()
+{
+    $data = [
+        'about'   => About::first(),
+        'content' => 'home/about/index'
+    ];
+    return view('home.layouts.wrapper', $data);
+    }
+
+    function service(){
+        $data = [
+            'service'   => Service::get(),
+            'content' => 'home/services/index'
+        ];
+        return view('home.layouts.wrapper', $data);
+        }   
 }
+

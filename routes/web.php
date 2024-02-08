@@ -25,23 +25,11 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+Route::get('/about', [HomeController::class, 'about']);
+Route::get('/services', [HomeController::class, 'service']);
 
 
 
-
-Route::get('/about', function() {
-    $data = [
-        'content' => 'home/about/index'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
-
-Route::get('/services', function() {
-    $data = [
-        'content' => 'home/services/index'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
 
 Route::get('/blog', function() {
     $data = [

@@ -5,15 +5,20 @@
     </div>
 <div class="row mt-5">
 
-        @for($i = 0; $i < 12; $i++)
+        <!-- @for($i = 0; $i < 12; $i++) -->
+
+        @foreach ($service as $item)
+
+
         <div class="col-md-3 my-3">
         <div class="text-center">
-        <i class="fas fa-home fa-3x text-success"></i>
-        <h5><b>Penanaman pohon</b></h5>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, nemo.</p>
+        <i class="{{ $item->icon}} text-success"></i>
+        <h5><b>{{ $item->title}}</b></h5>
+        <p>{!! Illuminate\Support\Str::limit($item->desc, 100) !!}</p>
     </div>
         </div>
 
-        @endfor
+        @endforeach
+        <!-- @endfor -->
     </div>
 </div>
