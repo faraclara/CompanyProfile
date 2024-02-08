@@ -109,6 +109,7 @@ class AdminBlogController extends Controller
         $data =[
             'title'     => 'Edit blog',
             'blog'      => Blog::find($id),
+            'kategori'  => Kategori::get(),
             'content'   => 'admin/blog/add'
         ];
         return view('admin.layouts.wrapper', $data);
@@ -129,7 +130,7 @@ class AdminBlogController extends Controller
             'title'  =>  'required',
             'body' =>  'required',
             'kategori_id' =>  'required',
-            'cover'  =>  'required',
+            // 'cover'  =>  'required',
         ]);
         
         //uploud cover

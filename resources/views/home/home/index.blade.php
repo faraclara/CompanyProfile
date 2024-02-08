@@ -45,20 +45,18 @@
 
 <div class="container mt-5">
     <div class="text-center">
-    <h4 class="">ABOUT</h4>
+    <h4 class="">About</h4>
     <p>Anda Tahu kami? kami beri tahu anda</p>
     </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
-            <img src="/img/banner.jpg" width="100%" alt="">
+            <img src="/{{ $about->cover}}" width="100%" alt="">
 
         </div>
         <div class="col-md-6">
-        <P>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum quaerat unde in cum vel debitis, aliquid ratione accusantium quis deserunt. Eum, laudantium eos. Maxime dolor aliquid repellendus deleniti adipisci ratione ipsum. Quidem nesciunt iure voluptatem doloribus tempora quam, repellendus neque architecto quasi placeat? Hic iusto ut laboriosam sit, numquam cumque sint modi excepturi consequuntur optio tenetur dolores voluptatibus earum debitis, cupiditate dolorum obcaecati beatae. Libero error ex quaerat corrupti commodi rerum, enim at doloremque delectus esse quam similique magni. Dolorum eaque autem similique eum, voluptatem vel animi, exercitationem architecto doloremque temporibus, quia optio aliquid! Culpa esse quae quod eius perferendis!</P>
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ut ipsa consequuntur voluptates doloremque amet error iure in esse nihil culpa libero, accusantium modi. Molestiae eius enim maxime qui optio? Explicabo atque molestias nulla tenetur obcaecati, distinctio, assumenda provident incidunt cum quam optio commodi nostrum culpa eius aut, at eaque. </p>
+        {{ $about->desc}}
         </div>
     </div>
 
@@ -86,16 +84,19 @@
 
 <div class="row">
 
-        @for($i = 0; $i < 4; $i++)
+        <!-- @for($i = 0; $i < 4; $i++) -->
+        @foreach ($service as $item)
+
         <div class="col-md-3">
         <div class="text-center">
         <i class="fas fa-home fa-3x text-success"></i>
-        <h5><b>Penanaman pohon</b></h5>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit, nemo.</p>
+        <h5><b>{{ $item->title}}</b></h5>
+        <p>L{{ $item->desc}}</p>
     </div>
         </div>
+        @endforeach
 
-        @endfor
+        <!-- @endfor -->
     </div>
 
     <div class="text-center mt-3">
@@ -124,24 +125,25 @@
 </div>
 
     <div class="row">
+    @foreach ($blog as $item)
 
-    @for($i = 0; $i < 4; $i++)
 
         <div class="col-md-3 my-3">
             <div class="card shadow-sm">
                 <div class="wrapper-card-blog">
-                <img src="/img/thumb.jpg" class="img-card-blog" alt="">
+                <img src="/{{ $item->cover}}" class="img-card-blog" alt="">
             </div>
             <div class="p-3">
-            <a href="" class="text-decoration-none"><h5>Tanam Pohon Adam</h5></a>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non, reprehenderit? 
-                <a href="">Selengkapnya &RightArrow;</a>
+            <a href="" class="text-decoration-none"><h5>{!! $item->title !!}</h5></a>
+            <p>{!! Illuminate\Support\Str::limit($item->body, 100) !!}
+                
             </p>
+            <a href="/blog/show/{{$item->id}}">Selengkapnya &RightArrow;</a>
             </div>
     </div>
     </div>
 
-    @endfor
+    @endforeach
 
     <div class="text-center mt-3">
         <a href="" class= "btn btn-success px-5"class="">Selengkapnya<i class="fas fa-arrow-right"></i></a>

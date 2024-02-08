@@ -11,7 +11,7 @@ use App\Http\Controllers\AdminBlogController;
 use App\Http\Controllers\AdminKategoriController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminAuthController;
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +24,9 @@ use App\Http\Controllers\AdminAuthController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', [HomeController::class, 'index']);
 
-    $data = [
-        'content' => 'home/home/index'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
+
 
 
 Route::get('/about', function() {
