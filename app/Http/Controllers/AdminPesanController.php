@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Pesan;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminPesanController extends Controller
 {
@@ -17,7 +18,7 @@ class AdminPesanController extends Controller
         //
         $data =[
             'title'     => 'Manajemen Pesan',
-            'pesan'      => Pesan::get(),
+            'pesan'      => Pesan::orderBy('created_at', 'desc')->get(),
             'content'   => 'admin/pesan/index'
         ];
         return view('admin.layouts.wrapper', $data);
@@ -53,9 +54,13 @@ class AdminPesanController extends Controller
     public function show($id)
     {
         //
+        $pesan = Pesan::find($id);
+        $pesan->is_read = 1;
+        $pesan->save();
+
         $data =[
             'title'     => 'Manajemen Pesan',
-            // 'pesan'      => Pesan::find($id),
+            'pesan'      => $pesan,
             'content'   => 'admin/pesan/show'
         ];
         return view('admin.layouts.wrapper', $data);
@@ -93,5 +98,9 @@ class AdminPesanController extends Controller
     public function destroy($id)
     {
         //
+        $banner = Pesan::find($id);
+        $banner->delete();
+        Alert::success('Sukses', 'Data Berhasil dihapus');
+        return redirect('admin/pesan');
     }
 }
