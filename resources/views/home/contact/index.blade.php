@@ -9,16 +9,30 @@
         <div class="col-md-6">
             <div class="card">
                 <div class="card-body">
+                    <form action="/contact/send" method="POST">
+                        @csrf
                 <div class="form-group">
                 <label for="">Nama</label>
-                <input type="text" class="form-control" name="name" placeholder="Masukkan Nama Anda">
+                <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" placeholder="Masukkan Nama Anda">
+                @error('name')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
             </div>
             <div class="form-group mt-4">
                 <label for="">Isi Pesan</label>
-                <textarea name="id" id="" cols="30" rows="10" class="form-control" placeholder="Masukkan Pesan Anda"></textarea>
+                <textarea name="desc" id="" cols="30" rows="10" class="form-control @error('desc') is-invalid @enderror" placeholder="Masukkan Pesan Anda"></textarea>
+                @error('desc')
+                        <div class="invalid-feedback">
+                            {{$message}}
+                        </div>
+                    @enderror
             </div>
 
+            
             <button type="submit" class="btn btn-success  mt-3">Kirim</button>
+            </form>
                 </div>
             </div>
 

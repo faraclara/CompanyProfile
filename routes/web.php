@@ -13,6 +13,7 @@ use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\AdminAuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\HomeBlogController;
+use App\Http\Controllers\HomeContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,12 +35,8 @@ Route::get('/blog/show/{id}', [HomeBlogController::class, 'show']);
 
 
 
-Route::get('/contact', function() {
-    $data = [
-        'content' => 'home/contact/index'
-    ];
-    return view('home.layouts.wrapper', $data);
-});
+Route::get('/contact', [HomeContactController::class, 'index']);
+Route::post('/contact/send', [HomeContactController::class, 'send']);
 
 
 Route::get('/login', [AdminAuthController::class, 'index'])->name('login')->middleware('guest');
